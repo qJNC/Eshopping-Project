@@ -1,0 +1,94 @@
+{% include "header.html" %}
+
+<div class="container mt-3">
+ <form action="{% url "Placeorder"%}" method="POST">    
+    <div class="row">
+        <div class="col-md-7">
+            <div class="card shadow checkoutform">
+                <div class="card-body">
+                    <h6>Basic Details</h6>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>First Name</label>
+                            <input type="text" value="{{request.user.first_name}}" placeholder="Enter first name" class="form-control" name="fname">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Last Name</label>
+                            <input type="text" value="{{request.user.last_name}}" placeholder="Enter last name" class="form-control" name="lname">
+                        </div>
+                        <div class="col-md-6">
+                            <label> Email Id</label>
+                            <input type="text" value="{{request.user.email}}" placeholder="Enter your Email-id" class="form-control" name="email">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Phone</label>
+                            <input type="text" value="{{request.user.phone}}" placeholder="Enter your contact number" class="form-control" name="phone">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Address</label>
+                            <textarea class="form-control"value="{{request.user.address}}" name="address" ></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label>City</label>
+                            <input type="text" value="{{request.user.city}}" placeholder="Enter City " class="form-control" name="city" >
+                        </div>
+                        <div class="col-md-6">
+                            <label>State</label>
+                            <input type="text" value="{{request.user.state}}" placeholder="Enter State" class="form-control" name="state" >
+                        </div>
+                        <div class="col-md-6">
+                            <label>Country</label>
+                            <input type="text" value="{{request.user.country}}" placeholder="Enter country name" class="form-control" name="country" >
+                        </div>
+                        <div class="col-md-6">
+                            <label>Pincode</label>
+                            <input type="text" value="{{request.user.pincode}}" placeholder="Enter pincode" class="form-control" name="pincode" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-md-5">
+          <div class="card shadow">
+            <div class="card-body">
+                <h6>Order Summary</h6>
+                {% if cartitems %}
+                 <table class="table table-stripeds table-bordereds">
+                    <thread>
+                        <tr>
+                            <th>Name</th>
+                            <th>Qty</th>
+                            <th>Price</th>
+                        </tr>
+                    </thread>
+                    <tbody>
+                        {% for item in cartitems %}
+                        <tr>
+                            <td><img src="/media/{{item.product.product_image}}" height="50px" width="50px" class="me-2">{{item.product.product_name}}</td>
+                            <td>{{item.product_qty}}</td>
+                            <td>{{item.product.product_selling_price | stringformat:"d"}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                 </table>
+                 <h6> Grand Total
+                    <span class="float-end">Rs {{total_price | stringformat:"d"}}</span>
+                 </h6>
+                 <input type="hidden" value="COD" name="payment_mode">
+                 <div class="mt-3">
+                    <button type="submit" class="btn btn-primary">COD| Place Order</button>
+                 </div>
+                {% else %}
+                 <h4> Your cart is empty</h4>
+                {% endif %}
+            </div>
+         </div>
+        </div>
+    </div>
+</div>
+
+
+
+

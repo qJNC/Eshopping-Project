@@ -1,0 +1,182 @@
+#navbar{
+    display:flex;
+    
+    border-radius:4px;
+    position:relative;
+    height: 79px;
+    
+    align-items: center;
+}
+#navbar::before{
+    content:"";
+    background-color: black;
+    position:absolute;
+    height:100%;
+    width:100%;
+    z-index:-1;
+    opacity:0.4;
+
+
+}
+#navbar ul{
+    display :flex;
+    
+    list-style:none;
+    margin:10px 20px;
+    padding: 10px 20px;
+    top:2px;
+}
+#navbar ul li{
+    display:block;
+    padding:10px 10px;
+    float: right;
+}
+ img{
+height:70px;
+width:100px;
+margin:20px 10px;
+
+}
+.start{
+display:flex;
+flex-direction: column;
+height:350px;
+justify-content: center;
+align-items:center;
+}
+.start::before{
+
+content:"";
+    background:url(./cart\ top\ .webp) no-repeat center center/cover;
+    position:absolute;
+    height:100%;
+    width:100%;
+    z-index:-1;
+    opacity:0.89;
+}
+h1{
+font-size:2.8rem;
+text-align: center;;
+}
+.btn:hover{
+background-color:aquamarine;
+border:4px solid aquamarine;
+border-radius:2px;
+cursor:pointer;
+}
+#services-container{
+    
+    margin:189px 10px;
+   border:4px solid red; 
+   
+   
+    height:444px;
+}
+#services h1{
+    text-align: center;
+
+}
+
+.box{
+    display:block;
+    border:4px solid purple;
+    border-radius:5px;
+    width:300px;
+    height:250px;
+    float:left;
+    margin:20px 70px;
+}
+
+#services box img{ 
+ display:block;
+ 
+ 
+ margin:20px 10px;
+}
+
+
+#partner{
+    border:4px solid red;
+    border-radius:7px;
+    height: 414px;
+    background: url("our partners.jpg") no-repeat center center/cover;
+    margin:-183px 7px;
+}
+.primary img{
+    float:left;
+    margin:20px 70px;
+}
+#contact{
+    display:block;
+    margin:211px 10px;
+    position:relative;
+    height:450px;
+
+}
+#contact::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    opacity:0.7;
+    background:url(./formimage.jpeg) no-repeat center center/cover;
+
+}
+
+.form-group{
+   color:white;
+   text-align: center;
+}
+.flex-container {
+    display: flex;
+    height: 200px;
+    align-items: center;
+    background-color: DodgerBlue;
+    flex-wrap:wrap;
+}
+
+.flex-container > div {
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+}
+.lack{
+    display:flex;
+    background-color: yellow;
+    border: 5px black;
+} 
+
+.product-viewtag{
+    background-color: red;
+    color: #fff;
+    font-size:11px;
+    line-height:1;
+    position:absolute;
+    text-align:center;
+    text-transform: uppercase;
+    top: 22px;
+    margin-left:17.5rem;
+    padding:7px 10px;
+    font-weight:600;
+    min-width:45px
+    
+}
+
+.checkoutform label{
+    font-size:14px !important;
+    font-weight: 600;
+}
+.checkoutform input{
+    font-size: 14px !important;
+}
+
+.whatsapp-chat{
+    position:fixed;
+    bottom:05% !important;
+    left:03% !important;
+    
+}

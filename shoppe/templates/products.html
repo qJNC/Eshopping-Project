@@ -1,0 +1,32 @@
+
+{% include "header.html" %}
+
+<div class="container">
+   <div class="row">
+       <div class="col-md-12">
+        <h1>{{servicesname.name}}</h1>
+           <div class="row">
+               {% for items in Products %}
+                <div class="col-md-3">
+                   <div class="card h-100">
+                     <a href="{% url "Productview" items.category.serv_name items.product_name %}">
+                       <div class="card-body">
+                           <div class="card-image">
+                               <img src="/media/{{items.product_image}}" alt="Product image" class="w-100 h-100"/>
+                           </div>
+                           <h4 class="text-center">{{items.product_name}}</h4>
+                           Original Price:<span>{{items.product_original_price}}</span><br>
+                           Price:<span>{{items.product_Selling_price}}</span>
+                       </div>
+                     </a>
+                   </div>
+                </div>
+             {% endfor %}
+           </div>
+       </div>
+   </div>
+</div>
+<br>
+<br>
+<br>
+{% include "footer.html"%}
